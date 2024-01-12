@@ -12,6 +12,20 @@ const tween2 = KUTE.fromTo(
     { repeat: 999, duration: 9000, yoyo: true }
 )
 
-
 tween1.start();
 tween2.start();
+
+
+const nav = document.getElementById("nav");
+
+function menuToggle(x) {
+    x.classList.toggle("change");
+
+    if (nav.style.display == "flex") {
+        nav.style.display = "none";
+    } else {
+        nav.style.display = "flex";
+    }
+
+    nav.classList.toggle("vertical");
+}
