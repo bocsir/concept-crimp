@@ -3,6 +3,16 @@
     src: url(assets/fonts/Kallisto/Kallisto\ Bold.otf);
 }
 
+@font-face {
+    font-family: 'cafe';
+    src: url(assets/fonts/Louis\ George\ Cafe.ttf);
+}
+
+@font-face {
+    font-family: 'kallisto-big';
+    src: url(assets/fonts/Kallisto/Kallisto\ Heavy\ Italic.otf)
+}
+
 * {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -21,11 +31,11 @@ html {
 
 
 body {
-    background-image: url(assets/images/black-texture.jpg); 
+    /* background-image: url(assets/images/black-texture.jpg); 
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background-color: rgb(50, 40, 40);
     margin: 0;
-
     color: var(--white);
     width: 100%;
     height: auto;
@@ -54,8 +64,8 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 8px solid var(--grey);
-    border-top: 8px solid var(--grey);
+    border-bottom: 8px solid var(--white);
+    border-top: 8px solid var(--white);
     border-radius: 100%;
 }
 
@@ -90,6 +100,8 @@ a {
 }
 
 #greeting {
+    background-color: var(--purple);
+    z-index: -10;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -97,17 +109,37 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.5em;
+
+}
+
+#greeting-text {
+    width: fit-content;
+    position: relative;
+    z-index: 999;
+    font-size: 1.7em;
+    font-family: 'kallisto-big';
 }
 
 #greeting * {
     margin: .2em;
-    z-index: -1;
 }
+
+#greeting p {
+    font-family: 'cafe';
+}
+
+/* #greeting-img {
+    background-size: cover;
+    z-index: -99;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+} */
 
 #logo {
     position: absolute;
     right: 0;
+    margin: 20px;
     width: 250px;
     height: 300px;
     z-index: 1;
@@ -115,7 +147,7 @@ a {
 
 #top-visual {
     position: absolute;
-    right: 800px;
+    right: 900px;
     scale: 3;
     z-index: -9;
     overflow: hidden;
@@ -130,15 +162,9 @@ a {
 }
 
 #wave-visual {
-    position: absolute;
-    top: 100vh;
-    left: 0;
-    right: 0;
-    width: 100%;
-    scale: 3 2;
-    transform: translate(0, 25%);
-    z-index: -9;
-    
+    position: relative;
+    width: 100vw;
+    scale: 3 1;
 }
 
 .sample {
@@ -150,8 +176,6 @@ a {
     justify-content: center;
     padding-left: 200px;
     background-color: transparent;
-    border-top: 50px solid transparent;
-    margin-top: 50px;
 }
 
 footer {
@@ -188,7 +212,11 @@ footer {
         margin: 0;
         max-width: max-content;
     }
-    
+
+    #top-visual, #bottom-visual {
+        scale: 1;
+    }
+
 }
 
 @media (min-width: 670px) {
@@ -199,4 +227,7 @@ footer {
     nav {
         display: flex !important;
     }
+
 }
+
+
