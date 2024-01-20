@@ -15,13 +15,13 @@
 
 * {
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 :root {
     --white: rgb(242, 225, 211);
     --blue: rgba(49, 0, 162, 0.3);
-    --purple: rgba(110, 81, 131, 0.8);
+    --purple: rgba(32, 13, 46, 0.941);
     --grey: rgba(110, 107, 111, 0.705);
 }
 
@@ -34,11 +34,11 @@ body {
     /* background-image: url(assets/images/black-texture.jpg); 
     background-size: cover;
     background-position: center; */
-    background-color: rgb(50, 40, 40);
+    background-color: rgb(0, 0, 0);
     margin: 0;
     color: var(--white);
     width: 100%;
-    height: auto;
+    height: 100%;
     font-family: 'kallisto';
     display: flex;
     flex-direction: column;
@@ -66,7 +66,7 @@ nav {
     color: var(--white);
     margin: 1.5em;
     font-size: 1.5em;
-    padding: .2em;
+    padding-bottom: .8em;
     z-index: 2;
     /* border-bottom: 8px solid transparent;
     border-top: 8px solid transparent; */
@@ -77,12 +77,13 @@ nav {
     position: absolute;
     width: 100%;
     height: 4px;
+    border-radius: 15%;
     bottom: 0;
     left: 0;
     background-color: var(--white);
     transform: scaleX(0);
     transform-origin: center;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.15s ease-in-out;
 }
 
 .nav-item:hover::after {
@@ -130,6 +131,7 @@ nav {
 #greeting {
     height: 100vh;
     width: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,6 +143,7 @@ nav {
 #greeting-text {
     width: fit-content;
     position: relative;
+    bottom: 20%;
     z-index: 1;
     font-size: 1.7em;
     font-family: 'kallisto-big';
@@ -154,6 +157,24 @@ nav {
     font-family: 'cafe';
 }
 
+.icons {
+    position: absolute;
+    display: inline-flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    z-index: 10;
+}
+
+.icon {
+    color: var(--white);
+    padding: 5px;
+    cursor: pointer;
+    scale: .8;
+}
+
 /* #greeting-img {
     background-size: cover;
     z-index: -99;
@@ -164,11 +185,14 @@ nav {
 
 #logo {
     position: absolute;
-    right: 0;
+    left: 0;
+    bottom: 0;
     margin: 20px;
     width: 250px;
     height: 300px;
     z-index: 2;
+    scale: .7;
+    transform: translate(0, -50px);
 }
 
 #shop-logo {
