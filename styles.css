@@ -125,7 +125,7 @@ nav {
 }
 
 #greeting {
-    height: 100vh;
+    height: 60vh;
     width: 100%;
 
     display: flex;
@@ -279,4 +279,14 @@ nav {
 
 }
 
+@media (max-height: 730px) or (max-width: 350px){
+    h1 {
+        font-size: 1.5em;
+    }
 
+    #bottom-visual {
+        transform: scale(.7);
+        left: 150px;
+        bottom: 100px;
+    }
+}
