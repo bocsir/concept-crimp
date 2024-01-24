@@ -19,7 +19,7 @@
 }
 
 :root {
-    --white: rgb(242, 225, 211);
+    --white: rgb(248, 243, 239);
     --blue: rgba(49, 0, 162, 0.3);
     --purple: rgba(32, 13, 46, 0.941);
     --grey: rgba(110, 107, 111, 0.705);
@@ -28,7 +28,6 @@
 html {
     height: 100%;
 }
-
 
 body {
     /* background-image: url(assets/images/black-texture.jpg); 
@@ -42,6 +41,8 @@ body {
     font-family: 'kallisto';
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: -1;
 }
 
 p {
@@ -57,7 +58,6 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    width: min-content;
 }
 
 .nav-item {
@@ -65,11 +65,9 @@ nav {
     text-decoration: none;
     color: var(--white);
     margin: 1.5em;
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding-bottom: .8em;
     z-index: 2;
-    /* border-bottom: 8px solid transparent;
-    border-top: 8px solid transparent; */
 }
 
 .nav-item::after {
@@ -88,10 +86,8 @@ nav {
 
 .nav-item:hover::after {
     transform: scaleX(1);
-    /* border-bottom: 8px solid var(--white);
-    border-top: 8px solid var(--white);
-    border-radius: 100%; */
 }
+
 
 .menu-icon {
     margin: 30px;
@@ -137,7 +133,7 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 1;
+    z-index: -1;
 }
 
 #greeting-text {
@@ -183,14 +179,19 @@ nav {
     width: 100%;
 } */
 
-#logo {
+#logo-container {
     position: absolute;
-    left: 0;
     bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+#logo {
     margin: 20px;
     width: 250px;
     height: 300px;
-    z-index: 2;
+    z-index: 99;
     scale: .7;
     transform: translate(0, -50px);
 }
@@ -219,53 +220,9 @@ nav {
     z-index: -9;
 }
 
-.sample {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    padding-left: 200px;
-    background-color: transparent;
-}
-
-#shop-menu {
-    display: flex;
-    margin: 50px;
-    font-family: 'kallisto-big';
-    font-size: 1.5em
-}
-
-.shop-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;    
-}
-
-.product {
-    grid-column-start: 1;
-    grid-column-end: span 2;
-}
-
-.product img {
-    width: 100px;
-    height: 100px;
-}
-
-footer {
-    border-top: 10px solid var(--grey);
-    background-color: var(--purple);
-    position: relative;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    height: 200px
-}
-
 @media (max-width: 750px) or (max-height: 750px) {
     #logo {
         scale: .7;
-        transform: translate(80px, -80px); 
     }
 }
 
@@ -281,13 +238,15 @@ footer {
     nav.vertical {
         position: absolute;
         flex-direction: column;
-        margin-top: 70px;
-        margin-left: 30px;
+        padding: 70px 30px 0 30px;
+        height: 100%;
+        width: max-content;
+        background-color: var(--purple);
     }
     
     nav.vertical a {
-        margin: 0;
-        margin-top: 5px;
+        margin: 5px 0;
+        padding-bottom: .3em;
         max-width: max-content;
     }
 
@@ -304,6 +263,9 @@ footer {
         right: 350px;
     }
 
+    #logo-container {
+        justify-content: center;
+    }
 }
 
 @media (min-width: 750px) {

@@ -1,22 +1,30 @@
-const tween1 = KUTE.fromTo(
-    "#top-visual-1",
-    { path: "#top-visual-1" },
-    { path: "#top-visual-2" },
-    { repeat: 999, duration: 6000, yoyo: true }
-)
+const navLinks = document.querySelectorAll(".nav-item");
+console.log(navLinks);
 
-const tween2 = KUTE.fromTo(
-    "#bottom-visual-1",
-    { path: "#bottom-visual-1" },
-    { path: "#bottom-visual-2" },
-    { repeat: 999, duration: 6000, yoyo: true }
-)
+for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("click", currentPage());
+}
 
-tween1.start();
-tween2.start();
+function currentPage() {
+    console.log(window.location.pathname.split("/").pop());
 
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].classList.remove("active");
+    }
 
-const nav = document.getElementById("nav");
+    if (window.location.pathname.split("/").pop() == "index.html") {
+        document.getElementById("home").classList.add("active");
+        console.log(document.getElementById("home"));
+    } else if (window.location.pathname.split("/").pop() == "shop.html") {
+        document.getElementById("shop").classList.add("active");
+    } else if (window.location.pathname.split("/").pop() == "contact.html") {
+        document.getElementById("contact").classList.add("active");
+    } else if (window.location.pathname.split("/").pop() == "about.html") {
+        document.getElementById("about").classList.add("active");
+    } else if (window.location.pathname.split("/").pop() == "cart.html") {
+        document.getElementById("cart").classList.add("active");
+    }
+}
 
 function menuToggle(x) {
     x.classList.toggle("change");
