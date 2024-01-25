@@ -1,9 +1,18 @@
+if (!localStorage.getItem('hasRun')) {
+    localStorage.setItem('hasRun', true);
+    
+    //underline home
+    document.getElementById("home").classList.add("active");
+}
+
 const navLinks = document.querySelectorAll(".nav-item");
 console.log(navLinks);
 
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener("click", currentPage());
 }
+
+
 
 function currentPage() {
     console.log(window.location.pathname.split("/").pop());
