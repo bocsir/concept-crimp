@@ -154,7 +154,6 @@ nav {
 #greeting-text {
     width: fit-content;
     position: relative;
-    bottom: 20%;
     z-index: 1;
     font-size: 1.7em;
     font-family: 'kallisto-big';
@@ -208,7 +207,7 @@ nav {
     min-width: 250px;
     margin: 20px;
     height: 300px;
-    z-index: 99;
+    z-index: 9;
     scale: .7;
     transform: translate(0, -50px);
 }
@@ -311,11 +310,27 @@ nav {
     #greeting-text {
         top: 0;
     }
+
+    #logo {
+        scale: .5;
+        transform: translate(0, 50px);
+
+    }
+}
+
+@media (max-width: 400px) {
+    #logo {
+        scale: .4;
+        transform: translate(0, 50px);
+
+    }
 }
 
 @media (max-height: 615px) or (max-width: 350px){
     #logo {
-        scale: .4;
+        scale: .5;
+        transform: translate(0, 50px);
+
     }
 
     h1 {
@@ -341,7 +356,7 @@ nav {
     }
 }
 
-@media (max-height: 500px) {
+@media (max-height: 535px) {
     #logo {
         display: none;
     }

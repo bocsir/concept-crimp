@@ -16,12 +16,12 @@ body {
 
 #shop-menu {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     font-size: 1.5em;
     position: relative;
     height: auto;
     margin: 50px;
-    background-color: var(--purple);
+    border-bottom: 7px solid var(--purple);
 }
 
 .shop-container {
