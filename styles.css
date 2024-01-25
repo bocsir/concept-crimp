@@ -306,6 +306,10 @@ nav {
         left: 150px;
         bottom: 100px;
     }
+
+    #greeting-text {
+        top: 0;
+    }
 }
 
 @media (max-height: 615px) or (max-width: 350px){
