@@ -1,5 +1,6 @@
-if (!localStorage.getItem('hasRun')) {
-    localStorage.setItem('hasRun', true);
+//underline home
+function underlineHome() {
+    document.getElementById("home").classList.add("active");
 }
 
 const navLinks = document.querySelectorAll(".nav-item");
@@ -9,7 +10,6 @@ for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener("click", currentPage());
 }
 
-document.getElementById("home").classList.add("active");
 
 function currentPage() {
     console.log(window.location.pathname.split("/").pop());
