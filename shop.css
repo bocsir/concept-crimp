@@ -7,13 +7,6 @@ body {
     overflow: scroll;
 }
 
-:root {
-    --white: rgb(248, 243, 239);
-    --blue: rgba(49, 0, 162, 0.3);
-    --purple: rgba(32, 13, 46, 0.941);
-    --grey: rgba(110, 107, 111, 0.705);
-}
-
 #shop-menu {
     display: flex;
     justify-content: left;
@@ -21,7 +14,7 @@ body {
     position: relative;
     height: auto;
     margin: 50px;
-    border-bottom: 7px solid var(--purple);
+    border-bottom: 7px solid rgb(111, 87, 82);
 }
 
 .shop-container {
@@ -67,11 +60,14 @@ footer {
 
 #logo {
     scale: .5;
-    translate: 0 100px;
 }
 
 #logo-container {
     justify-content: right;
+    border-top: 4px solid var(--tan);
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
 }
 
 @media (max-width: 500px) {
